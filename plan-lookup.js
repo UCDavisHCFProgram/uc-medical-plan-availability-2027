@@ -168,9 +168,17 @@
 
         // Visually + semantically pair plan name with status
         var name = el('span', { className: 'result-plan', text: p.name });
+        var statusText = 'Not available';
+        if (isAvailable) {
+          var availabilityLabel = p.availability;
+          if (p.name === 'Kaiser Permanente HMO' && p.availability === 'non-Medicare and Medicare') {
+            availabilityLabel = 'non-Medicare and Senior Advantage';
+          }
+          statusText = 'Available (' + availabilityLabel + ')';
+        }
         var status = el('span', {
           className: 'result-status ' + (isAvailable ? '' : 'status-na'),
-          text: isAvailable ? ('Available (' + p.availability + ')') : 'Not available'
+          text: statusText
         });
 
         // Hidden context for screen readers -- announce plan name with status
