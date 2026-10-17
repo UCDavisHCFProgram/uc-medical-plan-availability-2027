@@ -548,14 +548,14 @@
               autocomplete="postal-code"
               aria-describedby="zip-help zip-error"
               required>
-            <p class="help" id="zip-help">5-digit ZIP code.</p>
+            <p class="help" id="zip-help">5-digit CA/DC/MD/VA ZIP code.</p>
             <p class="error" id="zip-error" role="alert" aria-live="polite"></p>
           </div>
 
           <div class="field">
             <label for="county-select">Choose county</label>
             <select id="county-select" name="county" aria-describedby="county-help county-error" disabled required>
-              <option value="">Enter a ZIP code first</option>
+              <option value="">Enter a ZIP code first.</option>
             </select>
             <p class="help" id="county-help">County must match (overlap) your ZIP code for an accurate result.</p>
             <p class="error" id="county-error" role="alert" aria-live="polite"></p>
